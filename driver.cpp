@@ -13,7 +13,7 @@ int main(int argc, char *argv[]) {
 	bool quit = false;
 	//Main code loop
 		std::string input;
-		//run startup 
+		//run startup
 		std::cout << "Loading your TODO List..." << std::endl;
 		Todo list = Todo();
 		//accept input
@@ -44,12 +44,23 @@ int main(int argc, char *argv[]) {
 			else if(input == "done"){
 				list.pop();
 			}
-			else if(input == "find"){
+			else if(input == "find"){               //EDITED
+			    string item;
+
+                string rest;
+                string first;
+                cout << "~>:Find: " << endl;
+                cin >> first;
+                getline(cin, rest);
+                item = first + rest;
+                list.findItem(item);
+                    /*
 				std::string item;
 				std::cout << "~>:Find: ";
 				std::cin >> item;
 				std::cin.ignore();
 				list.findItem(item);
+				*/
 			}
 			else{
 				std::cout << "Command not found" << std::endl;
